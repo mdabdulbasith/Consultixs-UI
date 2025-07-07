@@ -1,19 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import logo from '/src/assets/logo.png';
 import { Menu, X } from "lucide-react";
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-    handleScroll(); // Check on load
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleNavClick = (target) => {
+    if (location.pathname !== "/") {
+      navigate("/", { replace: true });
+      setTimeout(() => {
+        const section = document.querySelector(target);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      const section = document.querySelector(target);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
 
   return (
     <>
@@ -26,11 +46,10 @@ const Navbar = () => {
           <h1 className="text-3xl font-bold ml-2">Consultixs</h1>
         </div>
         <nav className="hidden md:flex space-x-6 text-xl font-medium">
-          <a href="#home" className="hover:underline">HOME</a>
-          <a href="#features" className="hover:underline">FEATURES</a>
-          <a href="#services" className="hover:underline">SERVICES</a>
-          <a href="#about-us" className="hover:underline">ABOUT US</a>
-          <a href="#contact" className="hover:underline">CONTACT</a>
+          <button onClick={() => handleNavClick('#home')} className="hover:underline cursor-pointer">HOME</button>
+          <button onClick={() => handleNavClick('#about-us')} className="hover:underline cursor-pointer">ABOUT US</button>
+          <Link to="/services" className="hover:underline">SERVICES</Link>
+          <button onClick={() => handleNavClick('#contact')} className="hover:underline cursor-pointer">CONTACT</button>
         </nav>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -60,12 +79,11 @@ const Navbar = () => {
           >
             X
           </button>
-          <div className="flex flex-col gap-4 mt-6">
-            <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
-            <a href="#features" onClick={() => setMenuOpen(false)}>Features</a>
-            <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
-            <a href="#about-us" onClick={() => setMenuOpen(false)}>About Us</a>
-            <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+          <div className="flex flex-col gap-4 mt-6 text-left text-base px-2">
+            <button onClick={() => { handleNavClick('#home'); setMenuOpen(false); }} className="text-white text-left">Home</button>
+            <Link to="/services" onClick={() => setMenuOpen(false)} className="text-white text-left">Services</Link>
+            <button onClick={() => { handleNavClick('#about-us'); setMenuOpen(false); }} className="text-white text-left">About Us</button>
+            <button onClick={() => { handleNavClick('#contact'); setMenuOpen(false); }} className="text-white text-left">Contact</button>
           </div>
         </div>
       </div>
