@@ -1,4 +1,3 @@
-// src/pages/services/RealEstate.jsx
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 
@@ -14,44 +13,59 @@ const RealEstate = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white py-24 px-6 relative overflow-hidden">
-      {/* Background Overlay */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-gray-900 via-black to-gray-900 opacity-90" />
-      
-      <div className="relative z-10 max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold mb-4 text-indigo-400 drop-shadow-lg">Real Estate Solutions</h1>
-          <p className="text-lg text-gray-300">
-            Digitally transform your real estate business with advanced tools and smart automation.
-          </p>
-        </div>
+    <div className="min-h-screen bg-gradient-to-br from-[#0f0f1b] via-[#09090f] to-[#0f0f1b] text-white px-6 py-28 relative overflow-hidden">
+      {/* Hero Section */}
+      <div className="relative z-10 max-w-6xl mx-auto text-center animate-fade-in-up">
+        <h1 className="text-5xl md:text-5xl font-bold mb-4 text-indigo-400 drop-shadow-md">
+          Real Estate Solutions
+        </h1>
+        <div className="w-24 h-1 mx-auto bg-indigo-500 rounded-full mb-6 animate-pulse" />
+        <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+          Digitally transform your real estate business with smart property management tools and seamless user experiences.
+        </p>
+      </div>
 
-        {/* Highlight Card */}
-        <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl shadow-[0_8px_30px_rgba(0,0,0,0.3)] p-8 md:p-12 space-y-6 hover:shadow-indigo-500/30 transition duration-300">
-          <h2 className="text-3xl font-semibold text-indigo-300 mb-4">What We Offer</h2>
-          <ul className="list-disc list-inside text-gray-300 space-y-2">
-            <li>Property listing portals with advanced search filters</li>
-            <li>CRM systems for lead tracking and client management</li>
-            <li>Virtual tours and booking integrations</li>
-            <li>Automated alerts and customer engagement tools</li>
-            <li>Analytics for market insights and performance tracking</li>
+      {/* Offerings Section */}
+      <div className="relative z-10 max-w-4xl mx-auto mt-20">
+        <div className="bg-gradient-to-br from-white/5 via-black/30 to-white/5 backdrop-blur-xl border border-white/10 rounded-3xl shadow-xl p-10 md:p-14 transition duration-300 hover:shadow-indigo-500/40">
+          <h2 className="text-3xl font-semibold text-indigo-300 mb-8 text-center">What We Offer</h2>
+          <ul className="space-y-5 text-gray-300 text-lg leading-relaxed list-none">
+            <li className="flex items-start gap-3">
+              <i className="fas fa-home text-indigo-400 text-xl mt-1" />
+              <span><strong className="text-white">Property Listing Platforms:</strong> Build responsive real estate portals for buying, selling, and renting.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <i className="fas fa-vr-cardboard text-indigo-400 text-xl mt-1" />
+              <span><strong className="text-white">Virtual Tours & 3D Walkthroughs:</strong> Enhance user engagement through immersive property experiences.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <i className="fas fa-map-marked-alt text-indigo-400 text-xl mt-1" />
+              <span><strong className="text-white">Location Intelligence:</strong> Integrate maps, demographics, and heatmaps to assist decision making.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <i className="fas fa-tasks text-indigo-400 text-xl mt-1" />
+              <span><strong className="text-white">CRM & Lead Management:</strong> Automate inquiries, follow-ups, and conversions with intelligent dashboards.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <i className="fas fa-cogs text-indigo-400 text-xl mt-1" />
+              <span><strong className="text-white">Custom Portals & Mobile Apps:</strong> Build secure, scalable web & mobile platforms tailored for real estate operations.</span>
+            </li>
           </ul>
         </div>
+      </div>
 
-        {/* Call to Action */}
-        <div className="mt-20 text-center">
-          <h3 className="text-2xl font-semibold mb-4 text-indigo-400">Reimagine Real Estate with Technology</h3>
-          <p className="text-gray-300 mb-6">
-            Let us help you create a smarter, more efficient real estate experience for your customers.
-          </p>
-          <button
-            onClick={handleContactClick}
-            className="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-lg transition"
-          >
-            Contact Us
-          </button>
-        </div>
+      {/* CTA Section */}
+      <div className="relative z-10 mt-24 text-center max-w-3xl mx-auto">
+        <h3 className="text-2xl font-semibold mb-4 text-indigo-400">Modernize Your Real Estate Business</h3>
+        <p className="text-gray-300 mb-6">
+          From virtual tours to mobile property search apps, we bring innovation to the real estate experience.
+        </p>
+        <button
+          onClick={handleContactClick}
+          className="inline-block px-8 py-3 text-lg font-medium text-white bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 rounded-full shadow-lg hover:shadow-indigo-700/50 transition-all"
+        >
+          Contact Us
+        </button>
       </div>
     </div>
   );

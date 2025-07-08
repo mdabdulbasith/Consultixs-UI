@@ -75,11 +75,11 @@ const Services = () => {
         </p>
 
         {/* Service Cards */}
-        <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
           {servicesList.map((service, i) => (
             <Link to={service.link} key={i}>
               <div
-                className="relative p-6 rounded-xl overflow-hidden shadow-xl border border-white/10 hover:shadow-2xl transition hover:scale-[1.02] bg-black cursor-pointer group"
+                className="relative p-6 rounded-xl overflow-hidden shadow-xl border border-white/10 hover:shadow-2xl transition hover:scale-[1.02] bg-black cursor-pointer group h-full flex flex-col justify-between"
               >
                 {/* Background Image */}
                 <div
