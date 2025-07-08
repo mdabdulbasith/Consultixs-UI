@@ -4,11 +4,11 @@ import { Plus } from 'lucide-react';
 const faqData = [
     {
         question: "What services does Consultixs offer?",
-        answer: "We offer AI consulting, model development, integrations, and scalable solutions tailored to your business.",
+        answer: "We offer AI consulting, model development, digital marketing, web/mobile development, and scalable IT solutions tailored to your business.",
     },
     {
         question: "Do you support multiple industries?",
-        answer: "Yes, including Healthcare, Finance, Logistics, Retail, and more.",
+        answer: "Yes, including Finance, Retail, Development, Education, and more.",
     },
     {
         question: "Is my data safe with Consultixs?",
@@ -30,32 +30,38 @@ const FAQSection = () => {
     return (
         <section id="faq" className="py-20 bg-gradient-to-b from-black via-gray-900 to-black text-white px-6">
             <div className="max-w-5xl mx-auto">
-                <h2 className="text-4xl font-bold text-center text-indigo-400 mb-12">Frequently Asked Questions</h2>
+                <h2 className="text-4xl font-bold text-center text-indigo-400 mb-12">
+                    Frequently Asked Questions
+                </h2>
 
                 <div className="space-y-4">
-                        {faqData.map((item, index) => (
-                            <div key={index} className="border border-white/10 bg-white/5 rounded-xl">
-                                <button
-                                    onClick={() => toggleFAQ(index)}
-                                    className="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"
+                    {faqData.map((item, index) => (
+                        <div
+                            key={index}
+                            className="border border-white/10 bg-white/5 hover:bg-white/10 transition rounded-xl"
+                        >
+                            <button
+                                onClick={() => toggleFAQ(index)}
+                                className="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer focus:outline-none"
+                                aria-expanded={openIndex === index}
+                            >
+                                <span className="text-lg md:text-xl font-medium text-white">
+                                    {item.question}
+                                </span>
+                                <span
+                                    className={`transition-transform duration-300 transform ${openIndex === index ? 'rotate-45' : 'rotate-0'}`}
                                 >
-                                    <span className="text-lg md:text-xl font-medium text-white">{item.question}</span>
-                                    <span
-                                        className={`transition-transform duration-300 transform ${openIndex === index ? 'rotate-45' : 'rotate-0'
-                                            }`}
-                                    >
-                                        <Plus size={28} strokeWidth={2} />
-                                    </span>
+                                    <Plus size={28} strokeWidth={2} />
+                                </span>
+                            </button>
 
-                                </button>
-
-                                {openIndex === index && (
-                                    <div className="px-6 pb-5 pt-0 text-base md:text-lg text-gray-300 leading-relaxed">
-                                        {item.answer}
-                                    </div>
-                                )}
-                            </div>
-                        ))}
+                            {openIndex === index && (
+                                <div className="px-6 pb-5 pt-0 text-base md:text-lg text-gray-300 leading-relaxed">
+                                    {item.answer}
+                                </div>
+                            )}
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

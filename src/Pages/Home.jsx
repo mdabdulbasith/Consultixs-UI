@@ -16,79 +16,122 @@ function Home() {
                 ></video>
                 <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-10" />
                 <div className="relative z-20 flex flex-col items-center justify-center h-full text-center text-white px-4">
-                    <h1 className="text-5xl font-bold mb-4">Welcome to Our AI Platform</h1>
+                    <h1 className="text-5xl font-bold mb-4">Empowering Innovation Across Industries</h1>
                     <p className="text-xl max-w-2xl">
-                        Transform your business with cutting-edge artificial intelligence solutions.
+                        From AI, IT solutions, and Digital Marketing to Web Development and Real Estate — we help you build, grow, and lead in the digital era.
                     </p>
                 </div>
             </main>
+
+            <section
+  id="about-us"
+  className="w-full py-28 text-white relative overflow-hidden"
+>
+  {/* Gradient Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: "radial-gradient(circle at top left, #0f172a, #1e3a8a)",
+      opacity: 0.95
+    }}
+  ></div>
+
+  {/* Content */}
+  <div className="relative z-10 max-w-6xl mx-auto text-center px-4 md:px-8">
+    <h2 className="text-4xl md:text-5xl font-bold mb-14 tracking-tight leading-tight">
+      About <span className="text-white drop-shadow-lg">Consultixs</span>
+    </h2>
+
+    {/* Intro Block */}
+    <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 text-white shadow-[0_8px_30px_rgba(0,0,0,0.3)] space-y-6 hover:shadow-indigo-500/30 transition duration-300">
+      <p className="text-lg md:text-xl leading-relaxed">
+        At <span className="font-semibold text-white">Consultixs</span>, we are a multi-domain tech partner delivering
+        <span className="font-medium"> AI solutions</span>,
+        <span className="font-medium"> IT services</span>,
+        <span className="font-medium"> Digital Marketing strategies</span>, and
+        <span className="font-medium"> Web development</span> tools to empower businesses across industries.
+      </p>
+      <p className="text-lg md:text-xl leading-relaxed">
+        From real estate automation to e-commerce intelligence, we blend innovation and execution to help you scale faster, operate smarter, and achieve your digital vision.
+      </p>
+    </div>
+
+    {/* Divider */}
+    <div className="my-20 w-1/2 h-[2px] bg-gradient-to-r from-white/0 via-white/60 to-white/0 mx-auto animate-pulse" />
+
+    {/* Cards */}
+    <div className="grid md:grid-cols-3 gap-10 text-left mt-10">
+      {[
+        {
+          title: "🎯 Our Mission",
+          desc:
+            "To bridge the gap between modern business demands and emerging technologies — helping organizations make bold, data-driven, and scalable moves in a digital-first world.",
+        },
+        {
+          title: "👥 Our Team",
+          desc:
+            "A vibrant mix of developers, marketers, AI engineers, designers, and strategists — all focused on creating real-world impact through customized digital solutions.",
+        },
+        {
+          title: "💡 Why Choose Us?",
+          desc:
+            "Expertise across AI, IT, and Marketing. Tailored end-to-end digital solutions. Client-first, collaborative approach. Proven success in multiple industries.",
+        },
+      ].map((card, idx) => (
+        <div
+          key={idx}
+          className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-lg hover:shadow-xl transition duration-300 shadow-md"
+        >
+          <h3 className="text-2xl font-bold mb-3 text-white">{card.title}</h3>
+          <p className="text-base text-white/90 leading-relaxed">{card.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
             <section
                 className="w-full px-6 py-24 bg-gradient-to-b from-black via-black/90 to-black text-white"
                 id="about-us"
             >
                 <div className="max-w-5xl mx-auto text-center px-4 md:px-8">
-                    {/* Title */}
-                    <h2 className="text-4xl md:text-5xl font-bold mb-14 tracking-tight leading-tight">
-                        About <span className="text-indigo-400">Consultixs</span>
-                    </h2>
 
-                    {/* Intro Block */}
-                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 md:p-12 text-center text-white shadow-xl space-y-6 transition hover:shadow-2xl">
-                        <p className="text-lg md:text-xl leading-relaxed">
-                            At <span className="font-semibold text-indigo-300">Consultixs</span>, At Consultixs, we specialize in delivering next-generation AI solutions that drive{" "}
-                            <span className="font-medium text-white">efficiency</span>,{" "}
-                            <span className="font-medium text-white">automation</span>, and strategic intelligence for modern enterprises.
-                        </p>
-                        <p className="text-lg md:text-xl leading-relaxed">
-                            With a dedicated team of AI researchers and engineers, we are committed to helping businesses adapt and grow using the true power of artificial intelligence. Whether you're starting or scaling, our solutions are built to evolve with your vision.{" "}
-
-                        </p>
-                    </div>
-
-                    {/* Divider */}
-                    <div className="my-20 h-px bg-white/10 w-1/2 mx-auto" />
-
-                    {/* Mission */}
-                    <div className="mb-20" data-aos="fade-up">
-                        <h3 className="text-3xl font-semibold mb-4 text-indigo-400">Our Mission</h3>
-                        <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                            To bridge the gap between business needs and AI innovation — empowering organizations to make confident,
-                            data-driven decisions with scalable, intelligent tools.
-                        </p>
-                    </div>
-
-                    {/* Team */}
-                    <div className="mb-20" data-aos="fade-up">
-                        <h3 className="text-3xl font-semibold mb-4 text-indigo-400">Our Team</h3>
-                        <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                            A passionate blend of data scientists, machine learning engineers, analysts, and strategists — driven to create
-                            AI products that solve real-world problems and accelerate innovation.
-                        </p>
-                    </div>
-
-                    {/* Why Choose Us */}
-                    <div className="mb-20" data-aos="fade-up">
-                        <h3 className="text-3xl font-semibold mb-6 text-indigo-400">Why Choose Us?</h3>
-                        <ul className="list-disc list-inside text-gray-300 text-lg max-w-3xl mx-auto space-y-3 leading-relaxed text-center">
-                            <li>Expertise in real-world AI deployment</li>
-                            <li>Tailored solutions for diverse industries</li>
-                            <li>Dedicated support and consultation</li>
-                            <li>Strong focus on security and scalability</li>
-                        </ul>
-                    </div>
 
                     {/* Industries We Serve */}
                     <div data-aos="fade-up">
-                        <h3 className="text-3xl font-semibold mb-10 text-indigo-400">Industries We Serve</h3>
+                        <h3 className="text-3xl font-semibold mb-10 text-indigo-400 text-center">Industries We Serve</h3>
                         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-6xl mx-auto">
                             {[
-                                { title: "Healthcare", icon: "fas fa-heartbeat", desc: "Diagnostics, patient analytics, and health tech." },
-                                { title: "Finance", icon: "fas fa-chart-line", desc: "Fraud detection, trading systems, risk analysis." },
-                                { title: "Retail", icon: "fas fa-shopping-cart", desc: "Personalized shopping, inventory insights." },
-                                { title: "Manufacturing", icon: "fas fa-industry", desc: "Automation, quality inspection, supply chain AI." },
-                                { title: "Education", icon: "fas fa-graduation-cap", desc: "Adaptive learning, performance analytics." },
-                                { title: "Logistics", icon: "fas fa-truck", desc: "Route optimization, real-time fleet tracking." }
+                                {
+                                    title: "IT Services",
+                                    icon: "fas fa-server",
+                                    desc: "Cloud solutions, IT support systems, DevOps automation, and SaaS tools."
+                                },
+                                {
+                                    title: "Development",
+                                    icon: "fas fa-code",
+                                    desc: "Web development, mobile apps, CMS, and custom software solutions."
+                                },
+                                {
+                                    title: "Digital Marketing",
+                                    icon: "fas fa-bullhorn",
+                                    desc: "SEO, performance campaigns, AI-driven targeting, and conversion optimization."
+                                },
+                                {
+                                    title: "Real Estate",
+                                    icon: "fas fa-building",
+                                    desc: "Property listing automation, virtual tours, and lead generation tools."
+                                },
+                                {
+                                    title: "Finance",
+                                    icon: "fas fa-chart-line",
+                                    desc: "Fraud detection, algorithmic trading, credit scoring, and compliance systems."
+                                },
+                                {
+                                    title: "Retail & E-Commerce",
+                                    icon: "fas fa-shopping-cart",
+                                    desc: "Personalized recommendations, customer behavior insights, and smart inventory."
+                                },
                             ].map((industry, i) => (
                                 <div
                                     key={i}
@@ -105,26 +148,33 @@ function Home() {
                     </div>
 
 
+
                     {/* Services Section */}
                     <section id="services" className="py-24 bg-black text-white">
                         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
                             <div>
                                 <h2 className="text-4xl font-bold mb-6">Our Services</h2>
-                                <ul className="space-y-4 text-gray-300 list-disc list-inside">
-                                    <li><strong className="text-white">AI Strategy Consulting:</strong> Align your goals with real-world AI use cases.</li>
-                                    <li><strong className="text-white">Custom AI Development:</strong> Tailored solutions that address your unique challenges.</li>
-                                    <li><strong className="text-white">API Integration:</strong> Use our cloud-hosted AI models in your app.</li>
-                                    <li><strong className="text-white">AI Training & Workshops:</strong> Equip your team with cutting-edge knowledge.</li>
+                                <ul className="space-y-4 text-gray-300 list-disc list-inside text-base">
+                                    <li><strong className="text-white">AI Consulting:</strong> Smart strategies for real-world AI adoption.</li>
+                                    <li><strong className="text-white">Web & Mobile Development:</strong> Custom, responsive digital experiences.</li>
+                                    <li><strong className="text-white">Digital Marketing:</strong> SEO, ads, and social media campaigns.</li>
+                                    <li><strong className="text-white">IT Solutions:</strong> Cloud, DevOps, and tech infrastructure.</li>
+                                    <li><strong className="text-white">API Integration:</strong> Seamless third-party connectivity.</li>
+                                    <li><strong className="text-white">Corporate Training:</strong> Upskilling teams in AI & tech.</li>
                                 </ul>
                             </div>
                             <div className="hidden md:block">
-                                <img src="https://www.museumnext.com/wp-content/uploads/2023/06/artificial_intellegence.jpg" alt="AI Services Illustration" className="w-full max-w-md mx-auto" />
+                                <img
+                                    src="https://www.museumnext.com/wp-content/uploads/2023/06/artificial_intellegence.jpg"
+                                    alt="Tech Services Illustration"
+                                    className="w-full max-w-md mx-auto rounded-xl shadow-lg"
+                                />
                             </div>
                         </div>
                     </section>
 
 
-                    {/* Features Section */}
+
                     <section id="features" className="py-24 bg-black text-white">
                         <div className="max-w-7xl mx-auto px-6">
                             <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
@@ -134,34 +184,34 @@ function Home() {
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
                                 {[
                                     {
-                                        icon: "🤖",
-                                        title: "AI-Powered Automation",
-                                        desc: "Reduce manual work with smart, rule-based workflows and predictive AI."
+                                        icon: "⚙️",
+                                        title: "Smart Automation",
+                                        desc: "Boost efficiency with automated workflows, bots, and AI routines."
                                     },
                                     {
-                                        icon: "📈",
-                                        title: "Real-Time Analytics",
-                                        desc: "Gain insights instantly through streaming data visualization and KPIs."
+                                        icon: "📊",
+                                        title: "Data-Driven Insights",
+                                        desc: "Leverage real-time dashboards, reports, and analytics."
                                     },
                                     {
-                                        icon: "🔒",
-                                        title: "Enterprise Security",
-                                        desc: "Military-grade encryption and compliance with industry standards."
+                                        icon: "🌐",
+                                        title: "Full-Stack Development",
+                                        desc: "Custom web & mobile apps built for scalability and performance."
                                     },
                                     {
-                                        icon: "🔗",
-                                        title: "Seamless Integration",
-                                        desc: "Easily plug into your CRM, ERP, or cloud system with powerful APIs."
+                                        icon: "📣",
+                                        title: "Digital Marketing Suite",
+                                        desc: "SEO, PPC, and social media tools to grow your online presence."
                                     },
                                     {
-                                        icon: "💡",
-                                        title: "Custom AI Models",
-                                        desc: "Solutions tailored to your business needs, trained on your own data."
+                                        icon: "🔐",
+                                        title: "Enterprise-Grade Security",
+                                        desc: "End-to-end encryption, compliance, and threat prevention."
                                     },
                                     {
-                                        icon: "📡",
-                                        title: "Cloud Deployment",
-                                        desc: "Deploy in the cloud or on-premise with high availability & scalability."
+                                        icon: "☁️",
+                                        title: "Cloud-Native Solutions",
+                                        desc: "Deploy anywhere — AWS, Azure, GCP, or private cloud."
                                     }
                                 ].map((feature, idx) => (
                                     <div
@@ -169,16 +219,13 @@ function Home() {
                                         className="bg-white/5 hover:bg-white/10 transition p-6 rounded-xl border border-white/10 shadow-lg backdrop-blur-md"
                                     >
                                         <div className="text-4xl mb-4">{feature.icon}</div>
-                                        <h3 className="text-2xl font-semibold text-indigo-300 mb-2">
-                                            {feature.title}
-                                        </h3>
+                                        <h3 className="text-2xl font-semibold text-indigo-300 mb-2">{feature.title}</h3>
                                         <p className="text-gray-300">{feature.desc}</p>
                                     </div>
                                 ))}
                             </div>
                         </div>
                     </section>
-
 
                     {/* Awards Section */}
                     <section className="py-20 bg-black text-white text-center">
@@ -362,8 +409,8 @@ function Home() {
                             &copy; {new Date().getFullYear()} Consultixs. All rights reserved.
                         </div>
                     </footer>
-                </div>
-            </section>
+                </div >
+            </section >
         </>
     );
 }

@@ -1,1 +1,4 @@
 @import "tailwindcss";
+.full-gradient-bg {
+  background: linear-gradient(to right, rgba(0, 171, 228, 0.85), rgba(35, 115, 255, 0.85));
+}
