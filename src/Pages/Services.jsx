@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate, Link } from "react-router-dom";
 
 // Image imports
-import aiStrategyImg from "../assets/services/ai-strategy.jpg";
+import aiStrategyImg from "../assets/services/Aistrategy.jpg";
 import developmentImg from "../assets/services/development.jpg";
 import marketingImg from "../assets/services/marketing.jpg";
 import itImg from "../assets/services/IT.jpg";
