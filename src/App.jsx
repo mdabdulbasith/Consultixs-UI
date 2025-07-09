@@ -1,7 +1,10 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Home from './Pages/Home';
+import HireTalent from './Pages/Hiretalent';
 import Services from './Pages/Services';
+import Contact from './Pages/Contact';
+import HowItWorks from './Pages/Howitworks';
 import AIConsulting from './Pages/services/AIConsulting';
 import Cloud from './Pages/services/cloud';
 import Webdevelopment from './Pages/services/webdevelopment';
@@ -30,6 +33,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/hire-talent" element={<HireTalent />} />
+        <Route path="/how-it-works" element={<HowItWorks />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/services/AIConsulting" element={<AIConsulting />} />
         <Route path="/services/Cloud" element={<Cloud />} />
         <Route path="/services/webdevelopment" element={<Webdevelopment />} />

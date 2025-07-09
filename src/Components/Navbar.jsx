@@ -49,7 +49,9 @@ const Navbar = () => {
           <button onClick={() => handleNavClick('#home')} className="hover:underline cursor-pointer">HOME</button>
           <button onClick={() => handleNavClick('#about-us')} className="hover:underline cursor-pointer">ABOUT US</button>
           <Link to="/services" className="hover:underline">SERVICES</Link>
-          <button onClick={() => handleNavClick('#contact')} className="hover:underline cursor-pointer">CONTACT</button>
+          <Link to="/hire-talent" className="hover:underline">HIRE TALENT</Link>
+          <Link to="/how-it-works" className="hover:underline">HOW IT WORKS</Link>
+          <Link to="/contact" className="hover:underline">CONTACT</Link>
         </nav>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -81,9 +83,11 @@ const Navbar = () => {
           </button>
           <div className="flex flex-col gap-4 mt-6 text-left text-base px-2">
             <button onClick={() => { handleNavClick('#home'); setMenuOpen(false); }} className="text-white text-left">Home</button>
-            <Link to="/services" onClick={() => setMenuOpen(false)} className="text-white text-left">Services</Link>
             <button onClick={() => { handleNavClick('#about-us'); setMenuOpen(false); }} className="text-white text-left">About Us</button>
-            <button onClick={() => { handleNavClick('#contact'); setMenuOpen(false); }} className="text-white text-left">Contact</button>
+            <Link to="/services" onClick={() => setMenuOpen(false)} className="text-white text-left">Services</Link>
+            <Link to="/hire-talent" onClick={() => setMenuOpen(false)} className="hover:underline">HIRE TALENT</Link>
+            <Link to="/how-it-works" onClick={() => setMenuOpen(false)} className="hover:underline">HOW IT WORKS</Link>
+            <Link to="/contact" onClick={() => setMenuOpen(false)} className="hover:underline">CONTACT</Link>
           </div>
         </div>
       </div>

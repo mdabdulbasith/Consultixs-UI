@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import FAQSection from "../Components/FAQSection";
+import Footer from '../Components/Footer';
 
 function Home() {
     return (
@@ -248,115 +249,7 @@ function Home() {
             </section>
             {/* FAQ Section */}
             <FAQSection />
-
-            {/* Contact Form Section */}
-            <section id="contact" className="py-24 bg-gradient-to-b from-black via-black/90 to-black text-white">
-                <div className="max-w-3xl mx-auto px-6">
-                    <h2 className="text-4xl font-bold text-center mb-10 text-indigo-400 drop-shadow">Get in Touch</h2>
-
-                    <form className="space-y-6 bg-white/10 p-8 rounded-xl border border-white/20 backdrop-blur-sm shadow-xl">
-                        <div>
-                            <label className="block mb-1 font-medium text-white">Name</label>
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Your Name"
-                                required
-                                className="w-full px-4 py-2 rounded-lg bg-black/70 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring focus:ring-indigo-500"
-                            />
-                        </div>
-
-                        <div>
-                            <label className="block mb-1 font-medium text-white">Email</label>
-                            <input
-                                type="email"
-                                name="email"
-                                placeholder="you@example.com"
-                                required
-                                className="w-full px-4 py-2 rounded-lg bg-black/70 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring focus:ring-indigo-500"
-                            />
-                        </div>
-
-                        <div>
-                            <label className="block mb-1 font-medium text-white">Message</label>
-                            <textarea
-                                name="message"
-                                rows="5"
-                                placeholder="Your message here..."
-                                required
-                                className="w-full px-4 py-2 rounded-lg bg-black/70 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring focus:ring-indigo-500"
-                            ></textarea>
-                        </div>
-
-                        <button
-                            type="submit"
-                            className="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 px-6 rounded-lg transition"
-                        >
-                            Send Message
-                        </button>
-                    </form>
-                </div>
-            </section>
-
-            {/* Footer Section */}
-            <footer className="bg-gradient-to-t from-black via-gray-900 to-black text-gray-300 py-16 px-6 mt-10 border-t border-white/10">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
-                    {/* Logo & About */}
-                    <div>
-                        <div className="flex items-center mb-4">
-                            <img
-                                src="/src/assets/logo.png"
-                                alt="Consultixs Logo"
-                                className="h-11 w-20 object-cover object-left rounded"
-                            />
-                            <span className="ml-3 text-2xl font-semibold text-white">Consultixs</span>
-                        </div>
-                        <p className="text-sm text-gray-400 leading-relaxed">
-                            Empowering businesses with cutting-edge AI and intelligent automation.
-                            Let us transform your ideas into scalable solutions.
-                        </p>
-                    </div>
-
-                    {/* Quick Links */}
-                    <div>
-                        <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
-                        <ul className="space-y-2 text-sm">
-                            <li><a href="#features" className="hover:text-white transition duration-200">Features</a></li>
-                            <li><a href="#services" className="hover:text-white transition duration-200">Services</a></li>
-                            <li><a href="#about-us" className="hover:text-white transition duration-200">About</a></li>
-                            <li><a href="#contact" className="hover:text-white transition duration-200">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    {/* Contact Info */}
-                    <div>
-                        <h4 className="text-lg font-semibold text-white mb-4">Contact</h4>
-                        <ul className="space-y-2 text-sm">
-                            <li>Email: <a href="mailto:info@consultixs.com" className="hover:underline">info@consultixs.com</a></li>
-                            <li>Phone: +91 98765 43210</li>
-                            <li>Location: Hyderabad, India</li>
-                        </ul>
-                    </div>
-
-                    {/* Social Media */}
-                    <div>
-                        <h4 className="text-lg font-semibold text-white mb-4">Follow Us</h4>
-                        <div className="ml-1 flex space-x-4">
-                            <a href="#" className="hover:text-white transition text-xl"><i className="fab fa-facebook-f"></i></a>
-                            <a href="#" className="hover:text-white transition text-xl"><i className="fab fa-x-twitter"></i></a>
-                            <a href="#" className="hover:text-white transition text-xl"><i className="fab fa-linkedin-in"></i></a>
-                            <a href="#" className="hover:text-white transition text-xl"><i className="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="border-t border-white/10 mt-12 pt-6 text-center text-sm text-gray-500">
-                    &copy; {new Date().getFullYear()} Consultixs. All rights reserved.
-                </div>
-            </footer>
-
-
-
+            <Footer/>
 
         </>
     );

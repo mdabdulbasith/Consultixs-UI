@@ -38,7 +38,7 @@ const FAQSection = () => {
                     {faqData.map((item, index) => (
                         <div
                             key={index}
-                            className="border border-white/10 bg-white/5 hover:bg-white/10 transition rounded-xl"
+                            className="border border-white/10 bg-white/5 hover:bg-white/10 transition rounded-xl overflow-hidden"
                         >
                             <button
                                 onClick={() => toggleFAQ(index)}
@@ -55,11 +55,12 @@ const FAQSection = () => {
                                 </span>
                             </button>
 
-                            {openIndex === index && (
-                                <div className="px-6 pb-5 pt-0 text-base md:text-lg text-gray-300 leading-relaxed">
-                                    {item.answer}
-                                </div>
-                            )}
+                            <div
+                                className={`px-6 text-base md:text-lg text-gray-300 transition-all duration-500 ease-in-out 
+                                ${openIndex === index ? 'max-h-40 py-4 opacity-100' : 'max-h-0 py-0 opacity-0'} overflow-hidden`}
+                            >
+                                {item.answer}
+                            </div>
                         </div>
                     ))}
                 </div>
