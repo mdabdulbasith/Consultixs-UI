@@ -1,7 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from '../Components/Footer';
 
 const Contact = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
+    });
+
+    const [success, setSuccess] = useState('');
+    const [error, setError] = useState('');
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setSuccess('');
+        setError('');
+
+        try {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/contact`
+                , {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData),
+                });
+
+            const data = await res.json();
+
+            if (res.ok) {
+                setSuccess('Message sent successfully!');
+                setFormData({ name: '', email: '', message: '' });
+            } else {
+                setError(data.error || 'Something went wrong.');
+            }
+        } catch (err) {
+            console.error(err);
+            setError('Server error. Try again later.');
+        }
+    };
+
     return (
         <>
             <section className="min-h-screen bg-black text-white py-24 px-6">
@@ -12,6 +52,7 @@ const Contact = () => {
                     </p>
 
                     <form
+                        onSubmit={handleSubmit}
                         className="space-y-6 bg-white/10 p-8 rounded-xl border border-white/20 backdrop-blur-sm shadow-lg"
                     >
                         <div>
@@ -19,6 +60,8 @@ const Contact = () => {
                             <input
                                 type="text"
                                 name="name"
+                                value={formData.name}
+                                onChange={handleChange}
                                 placeholder="Your Name"
                                 required
                                 className="w-full px-4 py-2 rounded-lg bg-black/70 border border-white/20 text-white focus:outline-none focus:ring focus:ring-indigo-500"
@@ -30,6 +73,8 @@ const Contact = () => {
                             <input
                                 type="email"
                                 name="email"
+                                value={formData.email}
+                                onChange={handleChange}
                                 placeholder="you@example.com"
                                 required
                                 className="w-full px-4 py-2 rounded-lg bg-black/70 border border-white/20 text-white focus:outline-none focus:ring focus:ring-indigo-500"
@@ -41,6 +86,8 @@ const Contact = () => {
                             <textarea
                                 name="message"
                                 rows="5"
+                                value={formData.message}
+                                onChange={handleChange}
                                 placeholder="Your message here..."
                                 required
                                 className="w-full px-4 py-2 rounded-lg bg-black/70 border border-white/20 text-white focus:outline-none focus:ring focus:ring-indigo-500"
@@ -53,6 +100,9 @@ const Contact = () => {
                         >
                             Send Message
                         </button>
+
+                        {success && <p className="text-green-400 mt-4">{success}</p>}
+                        {error && <p className="text-red-400 mt-4">{error}</p>}
                     </form>
                 </div>
             </section>

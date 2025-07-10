@@ -11,6 +11,8 @@ import Webdevelopment from './Pages/services/webdevelopment';
 import ITSolutions from './Pages/services/ITSolutions';
 import Marketing from './Pages/services/Marketing';
 import Realestate from './Pages/services/Realestate';
+import Login from './Pages/Login';
+import AdminPanel from './Pages/Adminpanel';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import ScrollToTop from './Components/ScrollToTop';
 import { useEffect, useState } from 'react';
@@ -42,6 +44,8 @@ function App() {
         <Route path="/services/ITSolutions" element={<ITSolutions />} />
         <Route path="/services/Marketing" element={<Marketing />} />
         <Route path="/services/Realestate" element={<Realestate />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/admin" element={<AdminPanel />} />
         <Route
           path="*"
           element={

@@ -85,9 +85,9 @@ const Navbar = () => {
             <button onClick={() => { handleNavClick('#home'); setMenuOpen(false); }} className="text-white text-left">Home</button>
             <button onClick={() => { handleNavClick('#about-us'); setMenuOpen(false); }} className="text-white text-left">About Us</button>
             <Link to="/services" onClick={() => setMenuOpen(false)} className="text-white text-left">Services</Link>
-            <Link to="/hire-talent" onClick={() => setMenuOpen(false)} className="hover:underline">HIRE TALENT</Link>
-            <Link to="/how-it-works" onClick={() => setMenuOpen(false)} className="hover:underline">HOW IT WORKS</Link>
-            <Link to="/contact" onClick={() => setMenuOpen(false)} className="hover:underline">CONTACT</Link>
+            <Link to="/hire-talent" onClick={() => setMenuOpen(false)} className="hover:underline">Hire Talent</Link>
+            <Link to="/how-it-works" onClick={() => setMenuOpen(false)} className="hover:underline">How It Works</Link>
+            <Link to="/contact" onClick={() => setMenuOpen(false)} className="hover:underline">Contact</Link>
           </div>
         </div>
       </div>
