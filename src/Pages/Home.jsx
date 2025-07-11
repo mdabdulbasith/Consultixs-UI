@@ -2,6 +2,8 @@ import { useState } from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import FAQSection from "../Components/FAQSection";
 import Footer from '../Components/Footer';
+import Chatbot from '../Components/Chatbot';
+
 
 function Home() {
     return (
@@ -250,6 +252,7 @@ function Home() {
             {/* FAQ Section */}
             <FAQSection />
             <Footer/>
+            <Chatbot />
 
         </>
     );
