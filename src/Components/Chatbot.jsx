@@ -17,8 +17,11 @@ const Chatbot = () => {
         setInput('');
 
         try {
-            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/chat`, { message: input });
+            const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/chat`, {
+                message: input
+            });
             setMessages(prev => [...prev, { text: res.data.reply, sender: 'bot' }]);
+
         } catch (err) {
             setMessages(prev => [...prev, { text: 'Sorry, something went wrong.', sender: 'bot' }]);
         }
